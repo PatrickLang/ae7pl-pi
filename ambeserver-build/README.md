@@ -3,14 +3,24 @@ This is a native build environment for G4KLX's AMBEServer. For the latest info, 
 It will bring up a container based on resin/raspbian, install the needed tools to build, as well as grab the latest source.
 
 
-## Building the Build Environment
+## Building AMBEServer
+### Build environment & code compilation
+First, set up & run the build environment
+
+> TODO - currently builds, need to fix for shared volume for source in / binary out
 
 ```
 docker build -t patricklang/ae7pl-ambeserver-build  ambeserver-build
 ```
 
-```
-docker run -v ./ambeserver:/ambeserver patricklang/ae7pl-ambeserver-build 
-```
-
 Outputs will be put into the shared volume, where they can easily be consumed in the next step [ambeserver](../docker-ambeserver)
+
+### Creating the 'run' container
+
+This will copy the built binary from the previous step, and build a minimal Docker container including it
+
+> TODO serial & network port forward missing
+
+```
+docker build -t patricklang/ae7pl-ambeserver ae7pl-ambeserver
+```
