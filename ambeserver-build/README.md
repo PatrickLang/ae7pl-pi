@@ -34,7 +34,10 @@ docker build -t patricklang/ae7pl-ambeserver -f ambeserver-run/Dockerfile .
 
 ### Running AMBEServer in a container
 
-The device must be passed with `docker run --device`. If you need a device other than /dev/ttyUSB0 and/or baudrate other than 230400, set them in environment variables too
+The device must be passed with `docker run --device`.
+If you only have one USB serial device (such as the ThumbDV) plugged in - it is `/dev/ttyUSB0`. baudrate defaults to 460800 [as used by ThumbDV Model A](http://nwdigitalradio.com/thumbdv-model-a/), but can be overrridden with `--env baudrate=<rate>`
+
+
 ```
-docker run --env serialport=/dev/ttyUSB0 --env baudrate=230400 --device=/dev/ttyUSB0 --rm -d patricklang/ae7pl-ambeserver
+docker run --env serialport=/dev/ttyUSB0 --env baudrate=460800 --device=/dev/ttyUSB0 -d patricklang/ae7pl-ambeserver
 ```
