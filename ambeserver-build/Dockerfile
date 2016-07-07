@@ -2,6 +2,7 @@ FROM resin/rpi-raspbian
 RUN apt-get update
 RUN apt-get install gcc
 RUN apt-get install g++
+RUN apt-get install curl
 
 WORKDIR /ambeserver-build
 # For full details, see:
