@@ -12,9 +12,9 @@ First, set up & run the build environment
 
 
 ```
-mkdir ambeserver-build
+mkdir ambeserver-share
 docker build -t patricklang/ae7pl-ambeserver-build  ambeserver-build
-docker run -v ambeserver-build:/ambeserver-build patricklang/ae7pl-ambeserver-build
+docker run -v ambeserver-share:/ambeserver-share patricklang/ae7pl-ambeserver-build
 ```
 
 Outputs will be put into the shared volume, where they can easily be consumed in the next step [ambeserver](../docker-ambeserver)

@@ -1,5 +1,5 @@
 FROM resin/rpi-raspbian
-ADD ambeserver-build/AMBEserver /usr/bin/AMBEServer
+ADD ambeserver-share/AMBEserver /usr/bin/AMBEServer
 
 ENV serialport=/dev/ttyUSB0
 ENV baudrate=230400

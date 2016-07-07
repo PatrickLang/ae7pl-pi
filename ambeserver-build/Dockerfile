@@ -4,7 +4,7 @@ RUN apt-get install gcc
 RUN apt-get install g++
 RUN apt-get install curl
 
-WORKDIR /ambeserver-build
+WORKDIR /ambeserver-share
 # For full details, see:
 # https://github.com/dl5di/OpenDV
 
