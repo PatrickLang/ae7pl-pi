@@ -5,6 +5,8 @@
 
 This is a native build environment for G4KLX's AMBEServer. For the latest info, see [github](https://github.com/dl5di/OpenDV/tree/master/DummyRepeater/DV3000), or the [PCRepeaterController yahoo group](https://groups.yahoo.com/neo/groups/pcrepeatercontroller/info)
 
+Also [NWDR's page](http://nwdigitalradio.com/category/ambeserver/)
+
 It will bring up a container based on resin/raspbian, install the needed tools to build, as well as grab the latest source.
 
 ### Build environment & code compilation
@@ -39,5 +41,5 @@ If you only have one USB serial device (such as the ThumbDV) plugged in - it is 
 
 
 ```
-docker run --env serialport=/dev/ttyUSB0 --env baudrate=460800 --device=/dev/ttyUSB0 -d -p 2460/udp patricklang/ae7pl-ambeserver
+docker run --env serialport=/dev/ttyUSB0 --env baudrate=460800 --device=/dev/ttyUSB0 -d -p 2460:2460/udp patricklang/ae7pl-ambeserver
 ```
