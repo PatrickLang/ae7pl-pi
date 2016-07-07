@@ -9,6 +9,5 @@ WORKDIR /ambeserver-build
 # https://github.com/dl5di/OpenDV
 
 # Building
-RUN curl -k https://raw.githubusercontent.com/dl5di/OpenDV/master/DummyRepeater/DV3000/AMBEserver.c -o AMBEServer.c
-
-CMD gcc AMBEServer.c -o AMBEServer
+CMD curl -k https://raw.githubusercontent.com/dl5di/OpenDV/master/DummyRepeater/DV3000/AMBEserver.c -o AMBEServer.c && \
+    gcc AMBEServer.c -o AMBEServer
