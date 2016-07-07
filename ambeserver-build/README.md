@@ -12,9 +12,14 @@ First, set up & run the build environment
 
 
 ```
-mkdir ambeserver-share
+
 docker build -t patricklang/ae7pl-ambeserver-build  ambeserver-build
-docker run -v ambeserver-share:/ambeserver-share patricklang/ae7pl-ambeserver-build
+```
+
+Now run it to actually build AMBEServer
+```
+mkdir ambeserver-share
+docker run -v ./ambeserver-share:/ambeserver-share patricklang/ae7pl-ambeserver-build
 ```
 
 Outputs will be put into the shared volume, where they can easily be consumed in the next step [ambeserver](../docker-ambeserver)
@@ -23,9 +28,15 @@ Outputs will be put into the shared volume, where they can easily be consumed in
 
 This will copy the built binary from the previous step, and build a minimal Docker container including it
 
+```
+docker build -t patricklang/ae7pl-ambeserver ambeserver-run
+```
+
+### Running AMBEServer in a container
+
+
 > TODO serial & network port forward missing
 
 ```
-docker build -t patricklang/ae7pl-ambeserver ae7pl-ambeserver
+docker run patricklang/ae7pl-ambeserver
 ```
-
