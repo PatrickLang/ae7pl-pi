@@ -39,5 +39,5 @@ If you only have one USB serial device (such as the ThumbDV) plugged in - it is 
 
 
 ```
-docker run --env serialport=/dev/ttyUSB0 --env baudrate=460800 --device=/dev/ttyUSB0 -d patricklang/ae7pl-ambeserver
+docker run --env serialport=/dev/ttyUSB0 --env baudrate=460800 --device=/dev/ttyUSB0 -d -p 2460/udp patricklang/ae7pl-ambeserver
 ```
